@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  before_action :authenticate_user, only: [:restricted]
+
   def home
     # ternary operator (one of two things) - if cookies[:count] does exist, we'll set it to an integer + 1
     # if it doesn't exist we'll give it the value of 1 
